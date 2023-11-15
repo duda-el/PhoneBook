@@ -23,16 +23,21 @@ while True:
                 found = True
         if found == False:
                 print(f"No contact found for {search_name.capitalize()}")
+                
     elif choose_1 == 2:
         add_name = input("Please enter name: ")
         add_phonebook = input("Please enter contact: ")
         dict_add = phonebook[add_name.capitalize()] = add_phonebook
+
     elif choose_1 == 3:
         delete_name = input("Please enter name or part of a name: ")
         if delete_name.capitalize() in phonebook:
             phonebook.pop(delete_name.capitalize())
         elif delete_name.lower() not in phonebook.lower():
              print(f"No contact found for {delete_name.capitalize()}")
+
     elif choose_1 == 5:
          for name,number in sorted(phonebook.items()):
               print(f"{name} - {number}")
+        
+        

@@ -4,7 +4,9 @@
 
 
 contact = {"Duda" : "592505750",
-           "Duto" : "599595750"}
+           "Gela" : "597603450",
+           "Mariami" : "577402490",
+           "Alexi" : "595115427"}
 
 
 while True:
@@ -23,10 +25,16 @@ while True:
                 print(f"No contact found for {search_name.capitalize()}")
     elif choose_1 == 2:
         add_name = input("Please enter name: ")
-        while add_name.isdigit():
-             print("ERROR: Name can't contain number")
-             add_name = input("Please enter name: ")
-        add_contact = input("Please enter contact:")
+        add_contact = input("Please enter contact: ")
         dict_add = contact[add_name.capitalize()] = add_contact
-
+    elif choose_1 == 3:
+        delete_name = input("Please enter name or part of a name: ")
+        if delete_name in contact:
+            contact.pop(delete_name)
+        elif delete_name not in contact:
+             print(f"No contact found for {delete_name.capitalize()}")
+    elif choose_1 == 5:
+         for name,number in sorted(contact.items()):
+              print(f"{name} - {number}")
+        
         
